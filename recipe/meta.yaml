@@ -1,4 +1,4 @@
-{% set version = '1.0.1' %}
+{% set version = "1.1.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mvord_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mvord/mvord_{{ version }}.tar.gz
-  sha256: cc77f8c92d5a030e9e1cbc2c811040d70686c335012e4288c275aeae7e118a3d
+  sha256: 17e7438265b6ae62ac901525f41341fbadce32e15e83c161b41d84a6cc17f5c9
 
 build:
-  merge_build_host: True  # [win]
-  number: 2
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -64,12 +64,10 @@ test:
 about:
   home: https://CRAN.R-project.org/package=mvord
   license: GPL-3.0-only
-  summary: A flexible framework for fitting multivariate ordinal regression models with composite
-    likelihood methods. Methodological details are given in Hirk, Hornik, Vana (2020)
-    <doi:10.18637/jss.v093.i04>.
+  summary: A flexible framework for fitting multivariate ordinal regression models with composite likelihood methods. Methodological details are given in Hirk, Hornik, Vana (2020) <doi:10.18637/jss.v093.i04>.
   license_family: GPL3
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
