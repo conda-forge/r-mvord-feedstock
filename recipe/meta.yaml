@@ -1,4 +1,4 @@
-{% set version = "1.1.1" %}
+{% set version = "1.2.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mvord_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mvord/mvord_{{ version }}.tar.gz
-  sha256: b4cebb5036aa90206389b8a9e631177a652fc49d27c0189f370ced17a56e983a
+  sha256: 98f9331662d846381338bf6e7be1e5a65d61c6a3d9b8cfddb59daf989d17b5bb
 
 build:
   merge_build_host: true  # [win]
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
