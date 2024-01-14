@@ -1,4 +1,4 @@
-{% set version = "1.1.1" %}
+{% set version = "1.2.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mvord_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mvord/mvord_{{ version }}.tar.gz
-  sha256: b4cebb5036aa90206389b8a9e631177a652fc49d27c0189f370ced17a56e983a
+  sha256: 98f9331662d846381338bf6e7be1e5a65d61c6a3d9b8cfddb59daf989d17b5bb
 
 build:
   merge_build_host: true  # [win]
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -33,11 +33,12 @@ requirements:
   host:
     - r-base
     - r-bb
+    - r-dfoptim
     - r-mass
     - r-matrix
-    - r-dfoptim
     - r-minqa
     - r-mnormt
+    - r-mvtnorm
     - r-numderiv
     - r-optimx
     - r-pbivnorm
@@ -46,11 +47,12 @@ requirements:
     - r-base
     - {{ native }}gcc-libs         # [win]
     - r-bb
+    - r-dfoptim
     - r-mass
     - r-matrix
-    - r-dfoptim
     - r-minqa
     - r-mnormt
+    - r-mvtnorm
     - r-numderiv
     - r-optimx
     - r-pbivnorm
@@ -72,22 +74,3 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/r
-
-# Package: mvord
-# Title: Multivariate Ordinal Regression Models
-# Version: 1.0.1
-# Date: 2020-05-27
-# Author: Rainer Hirk [aut, cre], Kurt Hornik [aut], Laura Vana [aut], Alan Genz [ctb] (Fortran Code)
-# Maintainer: Rainer Hirk <rhirk@wu.ac.at>
-# Description: A flexible framework for fitting multivariate ordinal regression models with composite likelihood methods. Methodological details are given in Hirk, Hornik, Vana (2020) <doi:10.18637/jss.v093.i04>.
-# License: GPL-3
-# Depends: R (>= 3.5.0), minqa, BB, ucminf, dfoptim
-# Imports: MASS, pbivnorm, stats, optimx, mnormt, numDeriv, Matrix
-# Suggests: knitr, rmarkdown, xtable, colorspace
-# VignetteBuilder: knitr
-# Encoding: UTF-8
-# NeedsCompilation: yes
-# RoxygenNote: 6.0.1
-# Packaged: 2020-05-27 15:37:36 UTC; rainer
-# Repository: CRAN
-# Date/Publication: 2020-05-28 17:20:11 UTC
