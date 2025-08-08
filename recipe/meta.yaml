@@ -16,6 +16,10 @@ build:
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -33,9 +37,9 @@ requirements:
   host:
     - r-base
     - r-bb
-    - r-dfoptim
     - r-mass
     - r-matrix
+    - r-dfoptim
     - r-minqa
     - r-mnormt
     - r-mvtnorm
@@ -46,9 +50,9 @@ requirements:
   run:
     - r-base
     - r-bb
-    - r-dfoptim
     - r-mass
     - r-matrix
+    - r-dfoptim
     - r-minqa
     - r-mnormt
     - r-mvtnorm
